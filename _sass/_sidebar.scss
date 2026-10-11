@@ -1,0 +1,62 @@
+@use "variables" as *;
+
+.cv {
+  display: grid;
+  grid-template-columns: 0.26fr 0.73fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.sidebar {
+  text-align: center;
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  max-width: 230px;
+  height: auto;
+  margin: 0 auto 1rem;
+}
+
+.sidebar-panel {
+  background: var(--color-backdrop);
+  padding: 1rem;
+  text-align: left;
+}
+
+.sidebar-heading {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  border-bottom: 1px solid var(--color-lightgray);
+  padding-bottom: 0.25rem;
+}
+
+.skill-group + .skill-group {
+  margin-top: 1.25rem;
+}
+
+.skill {
+  margin-bottom: 0.6rem;
+}
+
+.skill-name {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.skill-bars {
+  display: flex;
+  gap: 4px;
+  margin-top: 0.25rem;
+}
+
+.bar {
+  width: 26px;
+  height: 5px;
+  background: var(--color-lightgray);
+}
+
+.bar.filled {
+  background: var(--color-ink);
+}

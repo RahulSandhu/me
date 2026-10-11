@@ -1,0 +1,15 @@
+# Build output
+_site/
+.jekyll-cache/
+
+# Local gems
+vendor/
+.bundle/
+
+# Secrets & runtime state — never commit
+.env
+ts-state/
+data/
+
+# Agent scratch / design notes (not part of the site)
+docs/

@@ -1,0 +1,57 @@
+@use "variables" as *;
+
+@media (max-width: 800px) {
+  .cv {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar-panel {
+    width: 100%;
+  }
+
+  .cv-header {
+    padding: 1.25rem 1rem 1rem;
+  }
+
+  .cv-name {
+    font-size: 1.7rem;
+  }
+
+  .cv-role {
+    font-size: 1rem;
+  }
+
+  .cv-contact {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .cv-entry-head {
+    flex-wrap: wrap;
+  }
+
+  .cv-main h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem 0.75rem 2rem;
+  }
+
+  .site-nav {
+    gap: 0.35rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .cv-name {
+    font-size: 1.4rem;
+  }
+}

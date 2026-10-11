@@ -1,0 +1,4 @@
+# Overlay for the tailnet deployment: the site is served by Caddy under the
+# /me subpath (docker-host.tail91459b.ts.net/me/), so every generated URL is
+# prefixed with it. Keeps _config.yml's url.
+baseurl: "/me"

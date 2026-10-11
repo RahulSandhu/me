@@ -1,0 +1,23 @@
+title: Ravneet-Rahul Sandhu Singh
+description: Biomedical Engineer — personal website
+author: Ravneet-Rahul Sandhu Singh
+timezone: Europe/Madrid
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:title/
+url: "https://docker-host.tail91459b.ts.net"
+baseurl: ""
+accent: "#48cae4"
+
+exclude: [Gemfile, Gemfile.lock, vendor, .bundle, docs, README.md, nginx.conf, nginx.root.conf]
+
+plugins: [jekyll-feed, jekyll-sitemap, jekyll-seo-tag]
+
+nav:
+  - { name: blog,    link: /blog/ }
+  - { name: resume,  link: /assets/files/resume.pdf }
+  - { name: contact, link: /contact/ }
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }

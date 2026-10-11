@@ -1,0 +1,5 @@
+<nav class="site-nav">
+  {%- for item in site.nav -%}
+    <a href="{{ item.link | relative_url }}">{{ item.name }}</a>{%- unless forloop.last -%}<span class="sep">/</span>{%- endunless -%}
+  {%- endfor -%}
+</nav>

@@ -1,0 +1,22 @@
+---
+layout: home
+---
+<section class="cv-section">
+  <h2>Profile</h2>
+  <div class="profile">{{ site.data.cv.profile | markdownify }}</div>
+</section>
+
+<section class="cv-section">
+  <h2>Work Experience</h2>
+  {%- for w in site.data.cv.work %}{% include cv-entry.html title=w.title dates=w.dates subtitle=w.org body=w.description %}{% endfor %}
+</section>
+
+<section class="cv-section">
+  <h2>Education</h2>
+  {%- for e in site.data.cv.education %}{% include cv-entry.html title=e.degree dates=e.dates subtitle=e.org body=e.description %}{% endfor %}
+</section>
+
+<section class="cv-section">
+  <h2>Publications</h2>
+  {%- for p in site.data.cv.publications %}{% include cv-entry.html title=p.title dates=p.dates subtitle=p.venue body=p.description url=p.url %}{% endfor %}
+</section>

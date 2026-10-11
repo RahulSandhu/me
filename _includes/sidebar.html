@@ -1,0 +1,9 @@
+<aside class="sidebar">
+  <img class="profile-photo"
+       src="{{ site.data.cv.contact.photo | relative_url }}"
+       alt="Portrait of {{ site.data.cv.contact.name }}">
+  <div class="sidebar-panel">
+    {% include skills.html heading="Skills" items=site.data.cv.skills %}
+    {% include skills.html heading="Languages" items=site.data.cv.languages %}
+  </div>
+</aside>

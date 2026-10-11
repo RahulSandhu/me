@@ -1,0 +1,12 @@
+# Keep the build context to source only.
+_site/
+.jekyll-cache/
+.bundle/
+vendor/
+docs/
+.git/
+.gitignore
+compose.yaml
+Dockerfile
+.dockerignore
+README.md
