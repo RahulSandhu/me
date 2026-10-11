@@ -77,8 +77,6 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
-    jekyll-seo-tag (2.9.1)
-      jekyll (>= 3.8, < 5.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
@@ -165,7 +163,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.4)
   jekyll-feed
-  jekyll-seo-tag
   jekyll-sitemap
   webrick (~> 1.9)
 

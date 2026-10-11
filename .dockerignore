@@ -10,3 +10,6 @@ compose.yaml
 Dockerfile
 .dockerignore
 README.md
+ts-state/
+data/
+.env

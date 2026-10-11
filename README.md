@@ -1,88 +1,36 @@
 # me
 
-Personal CV & blog — a Jekyll site, styled after the LaTeX CV.
+My personal website — a Jekyll CV + blog. It's also a template: fork it, edit
+the content below, and point the config at yourself.
 
-This repo is the site's source of truth. It is consumed by the **homelab** repo
-as the submodule at `docker-host/me`, which builds it and serves it two ways:
+## Configuration
 
-- **Tailnet** — `https://docker-host.tail91459b.ts.net/me/`, behind Caddy.
-- **Public** — `https://me.tail91459b.ts.net/`, at the domain root, on its own
-  funneled tailnet node.
+**Content**
+- `_data/cv.yml` — everything personal: contact, profile, work, education,
+  publications, skills, languages.
+- `_posts/YYYY-MM-DD-title.md` — blog posts (permalink `/blog/:title/`).
+- `index.html`, `404.html` — the pages.
 
-## Prerequisites
+**Look & settings**
+- `_config.yml` — title, author, nav, plugins.
+- `_sass/` (compiled via `assets/css/main.scss`), `_layouts/`, `_includes/`.
+  The palette is the Framework 12 "Sage" scheme (`_sass/_variables.scss`).
 
-- rbenv with Ruby 3.4.9 (pinned in `.ruby-version`)
-- Bundler (ships with that Ruby)
-
-## Setup (project-local gems)
-
-Gems install into `./vendor/bundle`, never system-wide:
-
+**Run locally**
 ```sh
-bundle config set --local path vendor/bundle
 bundle install
+bundle exec jekyll serve   # http://127.0.0.1:4000
 ```
 
-## Run locally
+**Deploy**
+Built by `Dockerfile` (Jekyll → nginx) and run with `compose.yaml`. The build
+also prints the CV page to `resume.pdf` — what the `resume` nav link downloads;
+`@media print` in `_sass/_print.scss` hides the nav. The baseurl/url come
+from `_config_tailnet.yml` (served under `/me/`) or `_config_public.yml` (served
+at the root), selected by build args; `nginx.conf` and `nginx.root.conf` serve
+them.
 
 ```sh
-bundle exec jekyll serve --livereload
-```
-
-Then open <http://127.0.0.1:4000>.
-
-## Build
-
-```sh
-bundle exec jekyll build   # output in _site/
-```
-
-## Deploy
-
-The `homelab` repo pins a commit of this repo as the submodule `docker-host/me`
-and serves it from one source. A multi-stage build (`Dockerfile`) renders Jekyll
-and hands the static output to nginx; the build args `JEKYLL_CONFIG` and
-`NGINX_CONF` select the deployment:
-
-- **Tailnet** uses `_config_tailnet.yml` (`baseurl: /me`).
-- **Public** uses `_config_public.yml` (empty `baseurl` plus the public `url`),
-  served at the node root by `nginx.root.conf`.
-
-To publish a change:
-
-```sh
-# in this repo
-git add -A && git commit -m "..." && git push
-
-# in homelab — bump the pinned commit
-git submodule update --remote docker-host/me
-git add docker-host/me && git commit -m "chore: bump me submodule"
-```
-
-On the `docker-host` VM (the submodule is copied to `/opt/me`):
-
-```sh
-cd /opt/me
-cp .env.example .env          # fill in TS_AUTHKEY (a reusable Tailscale key)
+cp .env.example .env        # TS_AUTHKEY for the public Tailscale node
 docker compose up -d --build
-docker exec me-ts tailscale funnel --bg --https=443 http://127.0.0.1:80
 ```
-
-## Editing content
-
-- **CV content:** edit `_data/cv.yml` — `contact`, `profile`, `work`,
-  `education`, `publications`, `skills`, `languages`.
-- **Blog posts:** add Markdown files to `_posts/` named `YYYY-MM-DD-title.md`;
-  permalink is `/blog/:title/`.
-- **Styles:** `_sass/*.scss`, compiled through `assets/css/main.scss`.
-
-## Notes
-
-- Internal links use Jekyll's `relative_url`, so the site can move behind a
-  subpath without template edits. The `baseurl`/`url` for each deployment live
-  in the config overlays (`_config_tailnet.yml`, `_config_public.yml`), not in
-  the templates.
-- `nginx.conf` serves the `/me` subpath; `nginx.root.conf` serves the public
-  root deployment. Both are plain static servers over the same build output.
-- `resume` in the top nav downloads `assets/files/resume.pdf` (a copy of the
-  compiled LaTeX CV at `~/documents/curriculum_vitae`).

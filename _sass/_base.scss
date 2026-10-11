@@ -12,7 +12,7 @@ body {
   margin: 0;
   font-family: $font-family;
   color: var(--color-ink);
-  background: #ffffff;
+  background: var(--color-bg);
   line-height: 1.5;
   font-size: 16px;
 }

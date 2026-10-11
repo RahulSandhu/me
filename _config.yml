@@ -7,16 +7,14 @@ highlighter: rouge
 permalink: /blog/:title/
 url: "https://docker-host.tail91459b.ts.net"
 baseurl: ""
-accent: "#48cae4"
 
-exclude: [Gemfile, Gemfile.lock, vendor, .bundle, docs, README.md, nginx.conf, nginx.root.conf]
+exclude: [Gemfile, Gemfile.lock, vendor, .bundle, README.md, nginx.conf, nginx.root.conf, compose.yaml, Dockerfile]
 
-plugins: [jekyll-feed, jekyll-sitemap, jekyll-seo-tag]
+plugins: [jekyll-feed, jekyll-sitemap]
 
 nav:
   - { name: blog,    link: /blog/ }
-  - { name: resume,  link: /assets/files/resume.pdf }
-  - { name: contact, link: /contact/ }
+  - { name: resume,  link: /resume.pdf }
 
 defaults:
   - scope: { path: "", type: posts }

@@ -6,10 +6,9 @@ _site/
 vendor/
 .bundle/
 
-# Secrets & runtime state — never commit
+# Deployment secrets & state
 .env
 ts-state/
-data/
 
-# Agent scratch / design notes (not part of the site)
-docs/
+# Local-only agent guide
+AGENTS.md
