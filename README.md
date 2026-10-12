@@ -1,5 +1,7 @@
 # me
 
+Live at <https://me.tail91459b.ts.net>.
+
 My personal website made with Jekyll. It's also a template: fork it, edit the
 content below, and point the config at yourself.
 
