@@ -15,9 +15,7 @@ plugins: [jekyll-feed, jekyll-sitemap]
 nav:
   - { name: home,    link: / }
   - { name: blog,    link: /blog/ }
-  # Resume is a public Filebrowser share on the fileshare funnel. The download
-  # endpoint sends Content-Disposition: attachment, so clicking it downloads the
-  # PDF. Recreating the share changes the hash; update it here.
+  # Public Filebrowser download; update the hash if the share is recreated.
   - { name: resume,  link: "https://fileshare.tail91459b.ts.net/files/public/api/resources/download?hash=9uO35ehXLfb-02VPtUlAGg" }
 
 defaults:

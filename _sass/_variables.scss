@@ -1,11 +1,10 @@
 :root {
-  /* Framework 12 "Sage" palette (see ~/desktop/projects/dotfiles). */
-  --color-bg: #000000;        /* page background */
-  --color-backdrop: #141414;  /* panels / tags */
-  --color-lightgray: #6e6e70; /* muted gray-green — separators, inactive bars */
-  --color-title: #b8d9ae;     /* sage — accent (links, header, badges) */
-  --color-ink: #e0e0e0;       /* off-white — text */
-  --color-border: #4a5d46;    /* olive — section rules / indicators */
+  --color-bg: #000000;
+  --color-backdrop: #141414;
+  --color-lightgray: #6e6e70;
+  --color-title: #b8d9ae;
+  --color-ink: #e0e0e0;
+  --color-border: #4a5d46;
 }
 
 $font-family: "Archivo", sans-serif;
