@@ -1,0 +1,8 @@
+<div class="cv-entry">
+  <div class="cv-entry-head">
+    <span class="cv-entry-title">{{ include.title }}{% if include.url and include.url != "" %} <a class="cv-entry-link" href="{{ include.url }}" aria-label="External link">&#128279;</a>{% endif %}</span>
+    <span class="cv-entry-badge">{{ include.dates }}</span>
+  </div>
+  <p class="cv-entry-subtitle">{{ include.subtitle }}</p>
+  <div class="cv-entry-body">{{ include.body | markdownify }}</div>
+</div>

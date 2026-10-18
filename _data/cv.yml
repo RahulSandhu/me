@@ -1,0 +1,109 @@
+contact:
+  name: "Ravneet-Rahul Sandhu Singh"
+  role: "Biomedical Engineer"
+  email: "rahulsandhu542001@gmail.com"
+  github: "RahulSandhu"
+  github_url: "https://github.com/RahulSandhu"
+  location: "Barcelona, Spain"
+  photo: "/assets/img/photo.png"
+
+profile: >
+  I am a biomedical engineer with hands-on research experience in signal
+  processing and health data analysis. I continuously expand my knowledge by
+  learning new programming languages and exploring new fields through courses,
+  projects, and open-source contributions.
+
+work:
+  - title: "Doctoral Researcher"
+    dates: "Oct 2026 – Present"
+    org: "IBEC & VHIR, Hospital Universitari Vall d'Hebron, Spain"
+    description: >
+      Leads the mScreenSleep project on smartphone- and wearable-based mHealth
+      for non-invasive sleep apnea diagnosis; manages multimodal data acquisition
+      and AI analysis, validated against gold standards in general, paediatric,
+      and SCI populations.
+  - title: "Technical Research Support"
+    dates: "Feb 2026 – July 2026"
+    org: "IBEC, Spain"
+    description: >
+      Research assistant within the "Green Electrodes for Sustainable
+      Electrophysiology" (GreenELECTRO) project at IBEC, responsible for ECG
+      data acquisition, signal processing, and electrical characterization of
+      novel eco-sustainable electrodes.
+  - title: "Clinical Informatics Intern"
+    dates: "Apr 2026 – Aug 2026"
+    org: "Hospital Clínic de Barcelona, Spain"
+    description: >
+      Conducted a study to compare clinical entity coding across multiple
+      terminologies (ICD-10, SNOMED-CT, ICD-11) to calculate completeness,
+      concordance, and clinical specificity metrics.
+  - title: "Technical Research Support"
+    dates: "May 2023 – May 2024"
+    org: "IBEC, Spain"
+    description: >
+      Research assistant on the "La Marató de TV3" funded project investigating
+      respiratory system evolution in COVID-19 patients and treatment of
+      resulting pneumonia. Collaborated with multiple hospitals for data
+      collection, coordinated team reports, and contributed to the signal
+      processing pipeline.
+
+education:
+  - degree: "PhD in Biomedical Engineering"
+    dates: "Oct 2026 – Present"
+    org: "Universitat Politècnica de Catalunya (UPC), Spain"
+    description: >
+      Field of study: digital health and biomedical signal processing.
+  - degree: "MSc in Health Data Science"
+    dates: "Sep 2024 – Sep 2026"
+    org: "Universitat Rovira i Virgili, Spain"
+    description: >
+      Inter-university programme (EIT Health funded). Health data management,
+      statistical modeling, machine learning, digital health, and ethics.
+      Current grade: 9/10.
+  - degree: "BSc in Biomedical Engineering"
+    dates: "Jul 2019 – May 2024"
+    org: "Universitat Politècnica de Catalunya (UPC), Spain"
+    description: >
+      Engineering fundamentals (mathematics, physics, electronics), biomedical
+      signal and image analysis, biomechanics, biomaterials, and clinical
+      engineering. Final grade: 8/10.
+
+publications:
+  - title: "Entropy Measures for Heart Rate Variability Analysis"
+    dates: "Sep 2026"
+    venue: "MEDICON 2026, Siena, Italy"
+    description: >
+      Entropy measures for HRV to distinguish between NSR and CHF patients.
+      Awarded the IFMBE Students and Early Career Researchers Travel Fellowship
+      and named Young Investigators Competition Winner.
+    url: "https://doi.org/10.1007/978-3-032-39674-7"
+  - title: "Evaluation of WHO Coding Tool for ICD-11 Code Conversion from ICD-10 and SNOMED-CT"
+    dates: "Oct 2026"
+    venue: "WHO-FIC Network Annual Meeting 2026, Sydney, Australia"
+    description: >
+      Poster (submitted). Evaluation of WHO CodeFusion, an Apache Lucene-based
+      NLP tool for mapping ICD-10 and SNOMED-CT clinical terminologies to ICD-11
+      MMS. Concordance analysis between discharge diagnoses and health problems
+      with threshold optimization and post-coordination support.
+    url: ""
+  - title: "How do age and gender affect the respiratory pattern in healthy subjects?"
+    dates: "Jul 2024"
+    venue: "EMBC 2024, Orlando, USA"
+    description: >
+      This study explores how age and gender affect respiratory behavior in
+      healthy individuals through signal-based variability analysis, presented
+      at the IEEE Engineering in Medicine and Biology Conference (EMBC) 2024.
+    url: "https://doi.org/10.1109/EMBC53108.2024.10782218"
+
+skills:
+  - { name: "Go", level: 1 }
+  - { name: "MATLAB", level: 2 }
+  - { name: "Python", level: 3 }
+  - { name: "R", level: 2 }
+  - { name: "SQL", level: 2 }
+
+languages:
+  - { name: "Catalan", level: 3 }
+  - { name: "English", level: 3 }
+  - { name: "Punjabi", level: 2 }
+  - { name: "Spanish", level: 3 }

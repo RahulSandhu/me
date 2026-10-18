@@ -1,0 +1,5 @@
+# Overlay for the public funnel node: served at the ROOT of
+# me.tail91459b.ts.net, so no baseurl prefix, and the feed/sitemap URLs point
+# at the public hostname instead of the tailnet one.
+url: "https://me.tail91459b.ts.net"
+baseurl: ""

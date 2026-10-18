@@ -1,0 +1,14 @@
+# Build output
+_site/
+.jekyll-cache/
+
+# Local gems
+vendor/
+.bundle/
+
+# Deployment secrets & state
+.env
+ts-state/
+
+# Local-only agent guide
+AGENTS.md

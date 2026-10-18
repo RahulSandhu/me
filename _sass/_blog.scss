@@ -1,0 +1,47 @@
+@use "variables" as *;
+
+.post-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.post-card {
+  border-bottom: 1px solid var(--color-lightgray);
+  padding-bottom: 1rem;
+}
+
+.post-card h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.3rem;
+}
+
+.post-card h2 a {
+  text-decoration: none;
+}
+
+.post-card h2 a:hover {
+  text-decoration: underline;
+}
+
+.post-meta {
+  margin: 0 0 0.4rem;
+  color: var(--color-lightgray);
+  font-size: 0.85rem;
+}
+
+.tag {
+  display: inline-block;
+  margin-left: 0.4rem;
+  background: var(--color-backdrop);
+  color: var(--color-ink);
+  padding: 0.05rem 0.45rem;
+  font-size: 0.75rem;
+}
+
+.post-content {
+  margin-top: 1rem;
+}
+
+.back-link {
+  margin-top: 2rem;
+}

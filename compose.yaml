@@ -1,0 +1,56 @@
+name: me
+
+services:
+  # Tailnet copy — served by Caddy under /me (docker-host.tail91459b.ts.net/me/).
+  me:
+    build:
+      context: .
+    # Locally built image (see README). Not pulled from a registry.
+    image: me:local
+    container_name: me
+    restart: unless-stopped
+    networks:
+      - proxy
+
+  # Tailscale sidecar — gives the site its OWN tailnet node
+  # (me.tail91459b.ts.net) so the public funnel can be scoped to it alone,
+  # leaving every other service on docker-host tailnet-only.
+  me-ts:
+    image: tailscale/tailscale:v1.102.4
+    container_name: me-ts
+    hostname: me
+    restart: unless-stopped
+    environment:
+      TS_AUTHKEY: ${TS_AUTHKEY}
+      TS_STATE_DIR: /var/lib/tailscale
+      TS_USERSPACE: "false"
+    volumes:
+      - ./ts-state:/var/lib/tailscale
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    networks:
+      - internal
+
+  # Public copy — same source, rendered with an empty baseurl so it serves at the
+  # node ROOT. Shares the sidecar's network namespace, so it is the only thing
+  # the funnel can reach (on 127.0.0.1:80).
+  me-public:
+    build:
+      context: .
+      args:
+        JEKYLL_CONFIG: "_config.yml,_config_public.yml"
+        NGINX_CONF: nginx.root.conf
+    image: me-public:local
+    container_name: me-public
+    restart: unless-stopped
+    network_mode: "service:me-ts"
+    depends_on:
+      me-ts:
+        condition: service_started
+
+networks:
+  proxy:
+    external: true
+  internal:

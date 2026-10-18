@@ -1,0 +1,25 @@
+title: Ravneet-Rahul Sandhu Singh
+description: Biomedical Engineer — personal website
+author: Ravneet-Rahul Sandhu Singh
+timezone: Europe/Madrid
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:title/
+url: "https://docker-host.tail91459b.ts.net"
+baseurl: ""
+
+exclude: [Gemfile, Gemfile.lock, vendor, .bundle, README.md, AGENTS.md, nginx.conf, nginx.root.conf, compose.yaml, Dockerfile]
+
+plugins: [jekyll-feed, jekyll-sitemap]
+
+nav:
+  - { name: home,    link: / }
+  - { name: blog,    link: /blog/ }
+  # Resume is a public Filebrowser share on the fileshare funnel. The download
+  # endpoint sends Content-Disposition: attachment, so clicking it downloads the
+  # PDF. Recreating the share changes the hash; update it here.
+  - { name: resume,  link: "https://fileshare.tail91459b.ts.net/files/public/api/resources/download?hash=9uO35ehXLfb-02VPtUlAGg" }
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
